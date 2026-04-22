@@ -15,7 +15,7 @@ Este repositório contém a suíte de testes automatizados para a API da Loja EB
 ---
 
 ## 📂 Estrutura do Projeto
-
+```text
 test/
 ├── api/
 │   ├── categories.test.js      # CRUD de Categorias
@@ -29,9 +29,8 @@ test/
 │   └── products.contract.test.js   # Contrato: Produtos
 └── graphql/
     ├── login.test.js           # GraphQL: Autenticação
-    ├── user.test.js            # GraphQL: Queries de Usuários
-               
-
+    ├── user.test.js            # GraphQL: Queries de Usuários               
+```
 ---
 
 ## 🚀 Como Executar os Testes
