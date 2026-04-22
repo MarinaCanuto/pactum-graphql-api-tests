@@ -1,0 +1,33 @@
+{
+  "name": "pactum-api-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/**/*.test.js",
+    "report": "mocha \"test/**/*.test.js\" --reporter mochawesome",
+    "test:gql": "mocha ./test/graphql/**/*.test.js",
+    "test:rest": "mocha ./test/api/**/*.test.js",
+    "test:contract": "mocha ./test/contract/*.test.js",
+    "test:contractProvider": "mocha ./test/contract/loginProvider.test.js",
+    "test:contractConsumer": "mocha ./test/contract/loginConsumer.test.js"
+  },
+  "keywords": [
+    "pactumjs",
+    "ebac",
+    "automation",
+    "contract-testing",
+    "graphql"
+  ],
+  "author": "Marina Canuto",
+  "license": "ISC",
+  "description": "Suíte completa de testes automatizados: REST, GraphQL e Contrato com PactumJS",
+  "devDependencies": {
+    "mocha": "^11.7.5",
+    "mochawesome": "^7.1.4",
+    "pactum": "^3.9.1",
+    "pactum-matchers": "^1.2.0"
+  },
+  "dependencies": {
+    "pactum-flow-plugin": "^0.1.4"
+  }
+}
