@@ -1,0 +1,44 @@
+name: Testes API
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Instalar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar testes API
+        run: npm test
+
+      - name: Upload para Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: reports
+
+  deploy:
+    needs: api-tests
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+
+    steps:
+      - name: Deploy Pages
+        uses: actions/deploy-pages@v4
